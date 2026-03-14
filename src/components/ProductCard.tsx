@@ -1,26 +1,19 @@
 import React, { useState } from "react";
+import { PropsProduct } from "../interfaces/propsProduct";
 
-interface PropsProduct{
-    idProduct: number, 
-    titleProduct: string,
-    priceProduct: number,
-    descriptionProduct: string,
-    categoryProduct: string,
-    imageProduct: string
-}
 export const ProductCard = (infoProduct: PropsProduct) => {
 
     return(
         <>
         <article className="ProductCard">
             <div className="imageContainer">
-                <img src={infoProduct.imageProduct} className="coverImage"/>
+                <img src={infoProduct.image} className="coverImage"/>
             </div>
             <div className="ProductInfo">
-                <strong className="ProductTitle">{infoProduct.titleProduct}</strong>
-                <span className="ProductPrice">{infoProduct.priceProduct}</span>
-                <span className="ProductDescription">{infoProduct.descriptionProduct}</span>
-                <span className="CategoryProduct">{infoProduct.categoryProduct}</span>
+                <strong className="ProductTitle">{infoProduct.title}</strong>
+                <span className="ProductPrice">{infoProduct.price}</span>
+                <span className="ProductDescription">{infoProduct.description}</span>
+                <span className="CategoryProduct">{infoProduct.category}</span>
             </div>
         </article>
         </>
